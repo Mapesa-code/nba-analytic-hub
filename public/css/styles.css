@@ -1,0 +1,127 @@
+/* Custom styles for NBA Analytics Hub */
+
+.gradient-bg {
+    background: linear-gradient(135deg, #5D5CDE 0%, #3B82F6 100%);
+}
+
+.card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.loading-spinner {
+    border: 3px solid #f3f4f6;
+    border-top: 3px solid #5D5CDE;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.sentiment-positive { 
+    color: #10B981; 
+}
+
+.sentiment-negative { 
+    color: #EF4444; 
+}
+
+.sentiment-neutral { 
+    color: #6B7280; 
+}
+
+/* Tab styles */
+.tab-button.active {
+    border-bottom: 2px solid #3B82F6;
+    color: #3B82F6;
+}
+
+.tab-button:hover {
+    background-color: rgba(0,0,0,0.05);
+}
+
+.dark .tab-button:hover {
+    background-color: rgba(255,255,255,0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .grid-cols-1.md\\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .text-2xl {
+        font-size: 1.5rem;
+    }
+}
+
+/* Custom scrollbar */
+.overflow-y-auto::-webkit-scrollbar {
+    width: 6px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+.overflow-y-auto::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Animation for cards */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+/* Loading overlay */
+#loadingOverlay {
+    backdrop-filter: blur(2px);
+}
+
+/* Highlight cards */
+.highlight-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.highlight-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Prediction result animation */
+#predictionResult {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Chart containers */
+canvas {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mobile-friendly inputs */
+@media (max-width: 768px) {
+    select, input[type="text"] {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+}
