@@ -1,0 +1,13 @@
+## 10. render.yaml (Optional)
+```yaml
+services:
+  - type: web
+    name: nba-analytics-hub
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
